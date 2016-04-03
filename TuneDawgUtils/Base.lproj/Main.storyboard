@@ -695,14 +695,6 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K3R-Oo-q8t">
-                                <rect key="frame" x="267" y="56" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="qej-ud-8cp"/>
-                                    <constraint firstAttribute="width" constant="150" id="tLx-Oc-XkV"/>
-                                </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="YYg-43-2m2"/>
-                            </imageView>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-f9-XVv">
                                 <rect key="frame" x="45" y="152" width="121" height="22"/>
                                 <constraints>
@@ -713,6 +705,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="imgurLinkField:" target="XfG-lQ-9wD" id="I6m-mF-OBS"/>
+                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="don-OC-d8K">
                                 <rect key="frame" x="45" y="120" width="121" height="22"/>
@@ -747,6 +742,43 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3DQ-Tr-yz4">
+                                <rect key="frame" x="62" y="13" width="83" height="32"/>
+                                <buttonCell key="cell" type="push" title="Submit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0u1-2Q-gJ5">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="submitButton:" target="XfG-lQ-9wD" id="gyT-8U-lJ2"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RuF-fl-arr">
+                                <rect key="frame" x="153" y="22" width="42" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Ready" id="gsX-j7-b8k">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1gw-hB-9Dr">
+                                <rect key="frame" x="210" y="123" width="252" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="End-Xe-G9d"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="cmq-5q-cYj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K3R-Oo-q8t">
+                                <rect key="frame" x="267" y="56" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="qej-ud-8cp"/>
+                                    <constraint firstAttribute="width" constant="150" id="tLx-Oc-XkV"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="YYg-43-2m2"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="don-OC-d8K" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="45" id="0EU-Jc-hSA"/>
@@ -754,24 +786,32 @@
                             <constraint firstItem="wX1-Rx-9he" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="45" id="6Ql-Nh-aFH"/>
                             <constraint firstItem="BJm-Jv-R9x" firstAttribute="top" secondItem="don-OC-d8K" secondAttribute="bottom" constant="10" id="6qR-i6-JmX"/>
                             <constraint firstItem="BJm-Jv-R9x" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="45" id="9C3-eo-IGL"/>
+                            <constraint firstItem="K3R-Oo-q8t" firstAttribute="top" secondItem="1gw-hB-9Dr" secondAttribute="bottom" constant="-83" id="BVy-v3-7Af"/>
                             <constraint firstItem="K3R-Oo-q8t" firstAttribute="leading" secondItem="hnf-f9-XVv" secondAttribute="trailing" constant="101" id="D3g-oW-xbb"/>
+                            <constraint firstItem="3DQ-Tr-yz4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="68" id="FZC-7o-U9z"/>
+                            <constraint firstItem="RuF-fl-arr" firstAttribute="leading" secondItem="3DQ-Tr-yz4" secondAttribute="trailing" constant="16" id="G6P-Ee-HiG"/>
+                            <constraint firstItem="1gw-hB-9Dr" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="212" id="IcK-SZ-Wc2"/>
                             <constraint firstItem="wX1-Rx-9he" firstAttribute="top" secondItem="JHF-vY-PTo" secondAttribute="bottom" constant="19" id="K5A-n9-Bah"/>
                             <constraint firstItem="JHF-vY-PTo" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="28" id="MLN-xa-ZTa"/>
                             <constraint firstItem="hnf-f9-XVv" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="45" id="QAF-5K-8un"/>
+                            <constraint firstAttribute="bottom" secondItem="3DQ-Tr-yz4" secondAttribute="bottom" constant="20" id="RYO-pc-7oW"/>
                             <constraint firstItem="don-OC-d8K" firstAttribute="top" secondItem="hnf-f9-XVv" secondAttribute="bottom" constant="10" id="Vk0-5k-cJR"/>
                             <constraint firstItem="hnf-f9-XVv" firstAttribute="top" secondItem="wX1-Rx-9he" secondAttribute="bottom" constant="10" id="YHA-Rc-c0k"/>
                             <constraint firstItem="tcV-HK-EHr" firstAttribute="top" secondItem="BJm-Jv-R9x" secondAttribute="bottom" constant="10" id="aMa-ta-Hxr"/>
                             <constraint firstItem="JHF-vY-PTo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="77" id="nFM-G4-lEt"/>
+                            <constraint firstAttribute="bottom" secondItem="RuF-fl-arr" secondAttribute="bottom" constant="22" id="ruN-b7-Cpp"/>
                             <constraint firstItem="tcV-HK-EHr" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="45" id="xpR-ZU-Dbv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imgurImage" destination="K3R-Oo-q8t" id="eaG-tT-InJ"/>
+                        <outlet property="imgurLinkFailField" destination="1gw-hB-9Dr" id="fSn-ik-OAW"/>
                         <outlet property="imgurLinkField" destination="hnf-f9-XVv" id="k3a-4F-xKC"/>
                         <outlet property="locationField" destination="don-OC-d8K" id="RAg-y3-sji"/>
                         <outlet property="nameField" destination="wX1-Rx-9he" id="nWO-Ce-rJq"/>
                         <outlet property="ownerEmailField" destination="tcV-HK-EHr" id="Dpd-XB-6mf"/>
                         <outlet property="ownerField" destination="BJm-Jv-R9x" id="Oz8-LU-Si8"/>
+                        <outlet property="statusLabel" destination="RuF-fl-arr" id="r93-EN-YSX"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
