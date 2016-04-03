@@ -60,6 +60,17 @@ class ViewController: NSViewController {
         self.imgurImage.image = image
     }
     
+    @IBAction func clearButton(sender: NSButton) {
+        statusLabel.stringValue = "Ready"
+        nameField.stringValue = ""
+        imgurLinkField.stringValue = ""
+        locationField.stringValue = ""
+        ownerField.stringValue = ""
+        ownerEmailField.stringValue = ""
+        imgurLinkFailField.stringValue = ""
+        self.imgurImage.image = nil
+    }
+    
     
     @IBAction func submitButton(sender: NSButton) {
         // Validation here normally
@@ -68,7 +79,7 @@ class ViewController: NSViewController {
         let newDawg = ["ImageURL": imgurLinkField.stringValue, "IsHere": "nil", "Location": locationField.stringValue, "Owner": ownerField.stringValue, "OwnerEmail": ownerEmailField.stringValue]
         
         ref.setValue(newDawg)
-        
+        statusLabel.stringValue = "Saved!"
         
     }
 
