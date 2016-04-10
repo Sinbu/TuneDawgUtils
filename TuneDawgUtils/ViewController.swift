@@ -21,7 +21,7 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -75,11 +75,16 @@ class ViewController: NSViewController {
     @IBAction func submitButton(sender: NSButton) {
         // Validation here normally
         let ref = Firebase(url: "https://tunedog.firebaseio.com/Dogs/\(nameField.stringValue)")
-        
-        let newDawg = ["ImageURL": imgurLinkField.stringValue, "IsHere": "nil", "Location": locationField.stringValue, "Owner": ownerField.stringValue, "OwnerEmail": ownerEmailField.stringValue]
-        
-        ref.setValue(newDawg)
-        statusLabel.stringValue = "Saved!"
+        let ref2 = Firebase(url: "https://tunedog.firebaseio.com/Dogs/")
+        var highestID = 0
+        ref2.queryOrderedByChild("ID").observeSingleEventOfType(.Value, withBlock: { snapshot in
+            highestID = (snapshot.children.allObjects.last!.value!["ID"] as! Int) + 1
+
+            let newDawg = ["ImageURL": self.imgurLinkField.stringValue, "IsHere": "nil", "Location": self.locationField.stringValue, "Owner": self.ownerField.stringValue, "OwnerEmail": self.ownerEmailField.stringValue, "ID": highestID]
+            
+            ref.setValue(newDawg)
+            self.statusLabel.stringValue = "Saved!"
+        })
         
     }
 
